@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="borderPaneSecondWindow" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cloudapplication_2022.SecondForOpenFile">
+   <bottom>
+      <Button fx:id="buttonBack" mnemonicParsing="false" onAction="#backToFirstScene" prefHeight="30.0" prefWidth="174.0" text="back" BorderPane.alignment="CENTER" />
+   </bottom>
+   <top>
+      <SplitPane fx:id="splitPaneTop" dividerPositions="0.20735785953177258" prefHeight="31.0" prefWidth="600.0"
+                 BorderPane.alignment="CENTER">
+         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+            <Label prefHeight="18.0" prefWidth="74.0" text="file name : "/>
+         </AnchorPane>
+         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="38.0" prefWidth="471.0">
+            <TextField fx:id="fileNameTextField" prefHeight="32.0" prefWidth="502.0"/>
+         </AnchorPane>
+      </SplitPane>
+   </top>
+   <right>
+      <Pane fx:id="rightLabel" prefHeight="400.0" prefWidth="40.0" BorderPane.alignment="CENTER">
+         <Label prefHeight="126.0" prefWidth="40.0" text="Label"/>
+      </Pane>
+   </right>
+   <left>
+      <Pane prefHeight="400.0" prefWidth="31.0" BorderPane.alignment="CENTER">
+         <Label fx:id="leftLabel" prefHeight="129.0" prefWidth="32.0" text="Label"/>
+      </Pane>
+   </left>
+   <center>
+      <AnchorPane fx:id="anchorPaneId" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <ScrollPane fx:id="scrollPaneSecond" layoutX="101.0" prefHeight="348.0" prefWidth="383.0">
+            <AnchorPane fx:id="anchorScroll" prefHeight="328.0" prefWidth="405.0">
+               <ImageView fx:id="imageView" fitHeight="233.0" fitWidth="229.0" pickOnBounds="true"
+                          preserveRatio="true">
+                  <viewport>
+                     <Rectangle2D/>
+                  </viewport>
+               </ImageView>
+               <Label fx:id="forText" prefHeight="16.0" prefWidth="398.0">
+                  <graphic>
+                     <Text fx:id="nameText" strokeType="OUTSIDE" strokeWidth="0.0"
+                           wrappingWidth="366.9830722808838"/>
+                  </graphic>
+               </Label>
+               <Label fx:id="labelSecond" layoutX="16.0" layoutY="22.0" prefHeight="160.0" prefWidth="159.0"/>
+            </AnchorPane>
+         </ScrollPane>
+      </AnchorPane>
+   </center>
+</BorderPane>

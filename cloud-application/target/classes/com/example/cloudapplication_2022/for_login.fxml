@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox fx:id="hbox_for_login" prefHeight="689.0" prefWidth="1089.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cloudapplication_2022.LoginController">
+   <AnchorPane prefHeight="689.0" prefWidth="495.0" style="-fx-background-color: FED700;">
+      <VBox prefHeight="689.0" prefWidth="495.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <Label prefHeight="17.0" prefWidth="309.0" text="                                Cloud application">
+            <font>
+               <Font name="System Italic" size="18.0" />
+            </font>
+         </Label>
+         <ImageView fitHeight="494.0" fitWidth="532.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@logo.jpg" />
+         </ImageView>
+         <HBox>
+            <ImageView fitHeight="196.0" fitWidth="495.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@robot_PNG32.png" />
+            </ImageView>
+            <ImageView fitHeight="196.0" fitWidth="495.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@robot_PNG32.png" />
+            </ImageView>
+            <ImageView fitHeight="196.0" fitWidth="495.0" layoutX="177.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@robot_PNG32.png" />
+            </ImageView>
+         </HBox>
+      </VBox>
+   </AnchorPane>
+   <AnchorPane prefHeight="689.0" prefWidth="595.0" style="-fx-background-color: #4A4EA6;">
+      <Label layoutX="46.0" layoutY="202.0" prefHeight="17.0" prefWidth="99.0" text="Login" textFill="#d0c7c7">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="23.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@user-login-icon-29.png"/>
+            </ImageView>
+         </graphic>
+      </Label>
+      <Label layoutX="46.0" layoutY="248.0" prefHeight="17.0" prefWidth="99.0" text="password" textFill="#d0c7c7">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="23.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@download.png"/>
+            </ImageView>
+         </graphic>
+      </Label>
+      <TextField fx:id="loginField" layoutX="153.0" layoutY="201.0" prefHeight="25.0" prefWidth="283.0" promptText="login">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <PasswordField fx:id="passwordField" layoutX="153.0" layoutY="247.0" prefHeight="25.0" prefWidth="283.0" promptText="password">
+         <font>
+            <Font size="14.0" />
+         </font></PasswordField>
+      <Button fx:id="enterLoginButton" layoutX="179.0" layoutY="342.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="231.0" style="-fx-background-color: FED700;" text="login">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font></Button>
+      <Text fx:id="textAreaLoginExist" layoutX="113.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="283.0" />
+      <ImageView fitHeight="133.0" fitWidth="150.0" layoutX="201.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+         <Image url="@2860.png_300.png" />
+      </ImageView>
+      <CheckBox fx:id="checkboxShowPassword" layoutX="449.0" layoutY="254.0" mnemonicParsing="false" onMouseClicked="#changeVisibilityTest" text="Show password" />
+      <TextField fx:id="passwordText" layoutX="153.0" layoutY="247.0" prefHeight="25.0" prefWidth="283.0" promptText="password">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="135.0" layoutY="417.0" prefHeight="27.0" prefWidth="133.0" text="Not a User?" textFill="#d0c7c7">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="signUp" layoutX="303.0" layoutY="414.0" mnemonicParsing="false" onAction="#signUpMethod" prefHeight="34.0" prefWidth="133.0" style="-fx-background-color: FED700;" text="Sign up">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="14.0" />
+         </font>
+      </Button>
+      <Text fx:id="textCheck" fill="#d0c7c7" layoutX="153.0" layoutY="528.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to cloud application" wrappingWidth="283.0">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </Text>
+   </AnchorPane>
+</HBox>

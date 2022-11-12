@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="ancorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="687.0" prefWidth="1089.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cloudapplication_2022.CloudController">
+    <BorderPane prefHeight="687.0" prefWidth="1088.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <bottom>
+            <Pane prefHeight="49.0" prefWidth="1020.0" BorderPane.alignment="CENTER">
+                <Button fx:id="btxExit" focusTraversable="false" layoutX="808.0" layoutY="-5.0" maxWidth="Infinity" mnemonicParsing="false" onAction="#btnExitAction" prefHeight="53.0" prefWidth="280.0" text="Exit">
+                    <graphic>
+                        <ImageView fitHeight="44.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                            <Image url="@icons8_exit_sign_50px.png" />
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button focusTraversable="false" layoutX="536.0" layoutY="-5.0" maxWidth="Infinity" mnemonicParsing="false" onAction="#btnMultipleUpload" prefHeight="53.0" prefWidth="272.0" text="upload multiple">
+                    <graphic>
+                        <ImageView fitHeight="44.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                            <Image url="@icons8-logout-48.png" />
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="upload" focusTraversable="false" layoutY="-5.0" maxWidth="Infinity" nodeOrientation="LEFT_TO_RIGHT" onAction="#btnUpload" prefHeight="53.0" prefWidth="272.0" text="Upload to Client">
+                    <graphic>
+                        <ImageView fitHeight="44.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                            <Image url="@icons8_upload_50px.png" />
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="download" focusTraversable="false" layoutX="264.0" layoutY="-5.0" maxWidth="Infinity" mnemonicParsing="false" onAction="#btnDownload" prefHeight="53.0" prefWidth="272.0" text="Download to Server">
+                    <graphic>
+                        <ImageView fitHeight="44.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                            <Image url="@icons8_download_50px.png" />
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </Pane>
+        </bottom>
+        <center>
+            <Pane prefHeight="592.0" prefWidth="913.0" BorderPane.alignment="CENTER">
+                <SplitPane dividerPositions="0.40504939626783754, 0.6125137211855104" layoutY="1.0" prefHeight="582.0" prefWidth="915.0">
+                    <AnchorPane prefHeight="518.0" prefWidth="418.0">
+                        <VBox layoutY="2.0" prefHeight="578.0" prefWidth="398.0">
+                            <HBox prefHeight="43.0" prefWidth="436.0">
+                                <TextField fx:id="client_text_field" prefHeight="45.0" prefWidth="344.0" />
+                                <Button fx:id="backClientButton" minWidth="47.0" mnemonicParsing="false" onAction="#goBackDirectoryClient" prefHeight="69.0" prefWidth="54.0">
+                                    <graphic>
+                                        <ImageView fitHeight="59.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                                            <Image url="@651120_arrows_512x512.png" />
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </HBox>
+                            <TableView fx:id="client_is_list_table" onMouseClicked="#backPathUpRequestMethodClientTable" prefHeight="491.0" prefWidth="398.0" style="-fx-background-color: #391d1d;">
+                                <contextMenu>
+                                    <ContextMenu fx:id="contextMenu" anchorX="0.0" height="20.0" width="40.0">
+                                        <items>
+                                            <MenuItem fx:id="menuContextOpen" mnemonicParsing="false" onAction="#menuContextOpen" text="open">
+                                                <graphic>
+                                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                        <Image url="@icons8_open_sign_50px.png" />
+                                                    </ImageView>
+                                                </graphic>
+                                            </MenuItem>
+                                            <SeparatorMenuItem mnemonicParsing="false" />
+                                            <MenuItem mnemonicParsing="false" onAction="#menuContextUpload" text="upload to client">
+                                                <graphic>
+                                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                        <Image url="@icons8_upload_50px.png" />
+                                                    </ImageView>
+                                                </graphic>
+                                            </MenuItem>
+                                            <SeparatorMenuItem mnemonicParsing="false" />
+                                            <MenuItem mnemonicParsing="false" onAction="#menuContextDownload" text="download to server">
+                                                <graphic>
+                                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                        <Image url="@icons8_download_50px.png" />
+                                                    </ImageView>
+                                                </graphic>
+                                            </MenuItem>
+                                            <SeparatorMenuItem mnemonicParsing="false" />
+                                            <MenuItem fx:id="deleteItem" mnemonicParsing="false" onAction="#menuContextDeleteFile" text="delete ">
+                                                <graphic>
+                                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                        <Image url="@icons8_trash_50px.png" />
+                                                    </ImageView>
+                                                </graphic>
+                                            </MenuItem>
+                                            <SeparatorMenuItem mnemonicParsing="false" />
+                                            <MenuItem fx:id="refreshItem" mnemonicParsing="false" onAction="#refreshMethod" text="refresh">
+                                                <graphic>
+                                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                        <Image url="@icons8_refresh_50px.png" />
+                                                    </ImageView>
+                                                </graphic>
+                                            </MenuItem>
+                                            <SeparatorMenuItem mnemonicParsing="false" />
+                                            <MenuItem fx:id="menuContextExit1" mnemonicParsing="false" onAction="#menuContextExit" text="Exit">
+                                                <graphic>
+                                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                        <Image url="@icons8_exit_sign_50px.png" />
+                                                    </ImageView>
+                                                </graphic>
+                                            </MenuItem>
+                                        </items>
+                                    </ContextMenu>
+                                </contextMenu>
+                            </TableView>
+                        </VBox>
+                    </AnchorPane>
+                    <AnchorPane prefHeight="584.0" prefWidth="454.0">
+                        <ImageView fitHeight="91.0" fitWidth="103.0" layoutY="223.0" pickOnBounds="true" preserveRatio="true">
+                            <Image url="@png-transparent-triangle.png" />
+                        </ImageView>
+                        <ListView fx:id="listViewForOnlineUsers" layoutX="-1.0" layoutY="75.0" prefHeight="146.0" prefWidth="97.0" />
+                        <Label alignment="CENTER" layoutY="6.0" prefHeight="35.0" prefWidth="96.0" text=" users app" />
+                    </AnchorPane>
+                    <AnchorPane prefHeight="561.0" prefWidth="413.0">
+                        <VBox prefHeight="534.0" prefWidth="413.0">
+                            <HBox prefHeight="48.0" prefWidth="413.0">
+                                <TextField fx:id="server_text_field" prefHeight="48.0" prefWidth="356.0" />
+                                <Button fx:id="backServerButton" mnemonicParsing="false" onAction="#goBackDirectoryServer" prefHeight="45.0" prefWidth="61.0">
+                                    <graphic>
+                                        <ImageView fitHeight="37.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                                            <Image url="@651120_arrows_512x512.png" />
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </HBox>
+                            <TableView fx:id="server_is_list_table" onMouseClicked="#backPathUpRequestMethodServerTable" prefHeight="492.0" prefWidth="413.0" style="-fx-background-color: #391d1d;" />
+                        </VBox>
+                    </AnchorPane>
+                </SplitPane>
+            </Pane>
+        </center>
+        <left>
+            <Pane prefHeight="538.0" prefWidth="108.0" BorderPane.alignment="CENTER">
+                <Label alignment="CENTER" layoutY="1.0" minWidth="60.0" prefHeight="583.0" prefWidth="111.0" style="-fx-background-color: #155679;" text="Home" textAlignment="CENTER" textFill="#e4d2d2">
+                  <font>
+                      <Font size="18.0" fx:id="x1" />
+                  </font>
+                </Label>
+            </Pane>
+        </left>
+        <top>
+            <Pane prefHeight="51.0" prefWidth="1089.0" BorderPane.alignment="CENTER">
+            <Label fx:id="dateTime" layoutX="24.0" layoutY="23.0" prefHeight="28.0" prefWidth="327.0" style="-fx-background-color: #196f2a;" text="Today " />
+                <MenuBar prefHeight="24.0" prefWidth="1088.0">
+                    <Menu mnemonicParsing="false" text="File">
+                        <MenuItem mnemonicParsing="false" text="New" />
+                        <MenuItem mnemonicParsing="false" text="Open…" />
+                        <Menu mnemonicParsing="false" text="Open Recent" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Close" />
+                        <MenuItem mnemonicParsing="false" text="Save" />
+                        <MenuItem mnemonicParsing="false" text="Save As…" />
+                        <MenuItem mnemonicParsing="false" text="Revert" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Preferences…" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="menuQuit" mnemonicParsing="false" onAction="#menuQuitMethod" text="Quit" />
+                    </Menu>
+                    <Menu mnemonicParsing="false" text="Edit">
+                        <MenuItem mnemonicParsing="false" text="Undo" />
+                        <MenuItem mnemonicParsing="false" text="Redo" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Cut" />
+                        <MenuItem mnemonicParsing="false" text="Copy" />
+                        <MenuItem mnemonicParsing="false" text="Paste" />
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Select All" />
+                        <MenuItem mnemonicParsing="false" text="Unselect All" />
+                    </Menu>
+                    <Menu fx:id="helpMenu" mnemonicParsing="false" onAction="#helpMenuClicked" text="Help">
+                        <MenuItem mnemonicParsing="false" text="About App" />
+                    </Menu>
+                </MenuBar>
+            <Label layoutX="728.0" layoutY="24.0" prefHeight="28.0" prefWidth="362.0" style="-fx-background-color: #196f2a;" textFill="#196f2a" />
+            <Label fx:id="nickNameLabel" alignment="CENTER" layoutX="293.0" layoutY="21.0" prefHeight="35.0" prefWidth="447.0" text="fff" textFill="#179bb5" />
+                <ImageView fitHeight="29.0" fitWidth="33.0" layoutX="353.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@user-login-icon-29.png" />
+                </ImageView>
+            </Pane>
+        </top>
+        <right>
+            <Pane prefHeight="539.0" prefWidth="68.0" BorderPane.alignment="CENTER">
+                <Label alignment="CENTER" layoutY="1.0" prefHeight="581.0" prefWidth="68.0" style="-fx-background-color: #155679;" text="Details" textAlignment="CENTER" textFill="#e4d2d2">
+                  <font>
+                      <Font size="18.0" fx:id="x11" />
+                  </font>
+                </Label>
+                <ImageView fx:id="imageLogin" fitHeight="45.0" fitWidth="54.0" layoutX="14.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@png-transparent-user.png" />
+                </ImageView>
+            </Pane>
+        </right>
+    </BorderPane>
+</AnchorPane>

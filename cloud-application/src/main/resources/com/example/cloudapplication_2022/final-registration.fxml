@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="627.0"
+            prefWidth="829.0" style="-fx-background-color: #22a495;" xmlns="http://javafx.com/javafx/18"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cloudapplication_2022.FinalRegistrationWindow">
+   <ImageView fitHeight="474.0" fitWidth="355.0" layoutX="244.0" layoutY="8.0" pickOnBounds="true"
+              preserveRatio="true">
+      <Image url="@3de028789692de79278be2b8c3f42103.jpg"/>
+   </ImageView>
+   <Label layoutX="17.0" layoutY="348.0" prefHeight="93.0" prefWidth="803.0"
+          text="you are now a new user cloud application">
+      <font>
+         <Font name="Algerian" size="36.0"/>
+      </font>
+   </Label>
+   <Label fx:id="backToSignInFromRegWindow" layoutX="366.0" layoutY="478.0" onMouseClicked="#backFromRegWindow"
+          text="sign in">
+      <font>
+         <Font size="36.0"/>
+      </font>
+   </Label>
+</AnchorPane>
